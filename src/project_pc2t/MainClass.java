@@ -25,7 +25,7 @@ public class MainClass {
 				sql.connect();
 				while(!sql.TableExist(checktableName))
 				{
-					System.out.print("MOMENTÁLNÌ NENÍ VYBRÁNA ÁDNÁ TABULKA, prosím vyberte tabulku, ne budete pokraèovat: ");
+					System.out.print("MOMENTÃLNÄš NENÃ VYBRÃNA Å½ÃDNÃ TABULKA, prosÃ­m vyberte tabulku, neÅ¾ budete pokraÄovat: ");
 					checktableName = scTable.next();
 				}
 				sql.disconnect();
@@ -36,33 +36,33 @@ public class MainClass {
 			if(sql.table == 0) 
 			{
 				System.out.println(
-						  "1 - Zmìnit tabulku\n"
-						+ "2 - Pøidat osobu do databáze\n"
-						+ "3 - Smazat osobu z databáze\n"
+						  "1 - ZmÄ›nit tabulku\n"
+						+ "2 - PÅ™idat osobu do databÃ¡ze\n"
+						+ "3 - Smazat osobu z databÃ¡ze\n"
 						+ "4 - Zobrazit tabulku databaze\n"
-						+ "5 - Pøiøadit zamìstnance ke studentovi\n"
-						+ "6 - Zobrazit zamìstnance pøiøazeny ke studentovi\n"
-						+ "7 - Pøidat studentovi známku \n" //Toto nejak upravit na rozeznavani, jestli je tabulka studentu nebo zamestnancu
-						+ "8 - Uloit do databáze\n"
-						+ "9 - Ukonèit\n");			
+						+ "5 - PÅ™iÅ™adit zamÄ›stnance ke studentovi\n"
+						+ "6 - Zobrazit zamÄ›stnance pÅ™iÅ™azeny ke studentovi\n"
+						+ "7 - PÅ™idat studentovi znÃ¡mku \n"
+						+ "8 - UloÅ¾it do databÃ¡ze\n"
+						+ "9 - UkonÄit\n");			
 			}
 			else if(sql.table == 1) 
 			{
 				System.out.println(
-						  "1 - Zmìnit tabulku\n"
-						+ "2 - Pøidat osobu do databáze\n"
-						+ "3 - Smazat osobu z databáze\n"
+						  "1 - ZmÄ›nit tabulku\n"
+						+ "2 - PÅ™idat osobu do databÃ¡ze\n"
+						+ "3 - Smazat osobu z databÃ¡ze\n"
 						+ "4 - Zobrazit tabulku databaze\n"
-						+ "5 - Pøiøadit studenta zamìstnanci\n"
-						+ "6 - Zobrazit studenty zamìstnance\n"
-						+ "7 - Upravit plat zamìstnanci \n" //Toto nejak upravit na rozeznavani, jestli je tabulka studentu nebo zamestnancu
-						+ "8 - Uloit do databáze\n"
-						+ "9 - Ukonèit\n");			
+						+ "5 - PÅ™iÅ™adit studenta zamÄ›stnanci\n"
+						+ "6 - Zobrazit studenty zamÄ›stnance\n"
+						+ "7 - Upravit plat zamÄ›stnanci \n"
+						+ "8 - UloÅ¾it do databÃ¡ze\n"
+						+ "9 - UkonÄit\n");			
 			}
-			System.out.print("\nZadejte poadovanou akci: ");
+			System.out.print("\nZadejte poÅ¾adovanou akci: ");
 			while (!sc.hasNextInt()) 
 			{
-				System.out.print("Zadejte poadovanou akci: ");
+				System.out.print("Zadejte poÅ¾adovanou akci: ");
 				sc.next();
 			}
 			int choice = sc.nextInt();
@@ -74,14 +74,14 @@ public class MainClass {
 			
 			case 1:
 				Scanner scAns = new Scanner(System.in);
-				System.out.print("Jste si jisti? Veškerá neuloená data budou ztracena.	(Y - ano, N - ne) --> ");
+				System.out.print("Jste si jisti? VeÅ¡kerÃ¡ neuloÅ¾enÃ¡ data budou ztracena.	(Y - ano, N - ne) --> ");
 				String answer = scAns.nextLine();
 				if(answer.equals("Y")) 
 				{
 					checktableName = "";
 				}
 				else if (!answer.equals("Y") && !answer.equals("N")) {
-					System.out.println("Nebylo moné rozeznat vaši odpovìï.");
+					System.out.println("Nebylo moÅ¾nÃ© rozeznat vaÅ¡i odpovÄ›Ä.");
 					System.out.println(answer);
 				}
 				break;
@@ -93,7 +93,7 @@ public class MainClass {
 					 Class.forName("project_pc2t." + checktableName);
 				}catch(ClassNotFoundException e) 
 				{
-					System.out.println("Nenašla odpovídající class k tabulce");
+					System.out.println("NenaÅ¡la odpovÃ­dajÃ­cÃ­ class k tabulce");
 					break;
 				}
 				Scanner scName = new Scanner(System.in);
@@ -113,7 +113,7 @@ public class MainClass {
 				Scanner scVal = new Scanner(System.in);
 				if(table == 0)
 				{
-					System.out.print("\t-->Zadejte známku studentovi: ");
+					System.out.print("\t-->Zadejte znÃ¡mku studentovi: ");
 					while (!scVal.hasNextDouble()) 
 					{
 						scVal.nextDouble();
@@ -123,7 +123,7 @@ public class MainClass {
 				}
 				else if(table == 1)
 				{
-					System.out.print("\t-->Zadejte plat zamìstnanci: ");
+					System.out.print("\t-->Zadejte plat zamÄ›stnanci: ");
 					while (!scVal.hasNextDouble()) 
 					{
 						scVal.nextDouble();
@@ -131,12 +131,12 @@ public class MainClass {
 					value = scVal.nextDouble();
 					break;
 				}
-				System.out.println("Osoba byla úspìšnì pøidána.");
+				System.out.println("Osoba byla ÃºspÄ›Å¡nÄ› pÅ™idÃ¡na.");
 
 				
 			case 3:
 				sql.connect();
-				System.out.print("\t-->Zadejte ID osoby, kterou si pøejete odstranit: ");
+				System.out.print("\t-->Zadejte ID osoby, kterou si pÅ™ejete odstranit: ");
 				while (!sc.hasNextInt()) 
 				{
 					sc.next();
@@ -144,7 +144,7 @@ public class MainClass {
 				int id = sc.nextInt();
 				sql.delete(checktableName ,id);
 				sql.disconnect();
-				System.out.println("Osoba s ID : " + id + " byl úspìšnì odebrána.");
+				System.out.println("Osoba s ID : " + id + " byl ÃºspÄ›Å¡nÄ› odebrÃ¡na.");
 				break;
 				
 				
@@ -166,7 +166,7 @@ public class MainClass {
 						idtoid1.nextInt();
 					}
 					int Id1 = idtoid1.nextInt();
-					System.out.print("\t-->ID zamìstnance: ");
+					System.out.print("\t-->ID zamÄ›stnance: ");
 					while (!idtoid2.hasNextInt()) 
 					{
 						idtoid2.nextInt();
@@ -181,7 +181,7 @@ public class MainClass {
 				
 			case 6:
 				Scanner idofstud = new Scanner(System.in);
-				System.out.println("\t-->ID zamìstnance: ");
+				System.out.println("\t-->ID zamÄ›stnance: ");
 				while (!idofstud.hasNextInt()) 
 				{
 					idofstud.nextInt();
@@ -196,24 +196,24 @@ public class MainClass {
 			case 7:
 				Scanner scUpdVal = new Scanner(System.in);
 				Scanner scUpdId = new Scanner(System.in);
-				System.out.print("Zadejte ID osoby, kterou chcete zmìnit: ");	//tuto cast zmenit, at tu neni milion sysout
+				System.out.print("Zadejte ID osoby, kterou chcete zmÄ›nit: ");	//tuto cast zmenit, at tu neni milion sysout
 				while (!scUpdId.hasNextDouble()) 
 				{
-					System.out.print("Zadejte ID osoby, kterou chcete zmìnit: ");
+					System.out.print("Zadejte ID osoby, kterou chcete zmÄ›nit: ");
 					scUpdId.next();
 				}
 				double updateId = scUpdId.nextInt();
-				System.out.print("Zadejte hodnotu, kterou chcete zadat této osobì: ");
+				System.out.print("Zadejte hodnotu, kterou chcete zadat tÃ©to osobÄ›: ");
 				while (!scUpdVal.hasNextDouble()) 
 				{
-					System.out.print("Zadejte hodnotu, kterou chcete zadat této osobì: ");
+					System.out.print("Zadejte hodnotu, kterou chcete zadat tÃ©to osobÄ›: ");
 					scUpdVal.next();
 				}
 				double updateVal = scUpdVal.nextInt();
 				sql.connect();
 				sql.update(checktableName, updateVal, updateId);
 				sql.disconnect();
-				System.out.println("Osoba s ID : " + updateId + " byla úspìšnì upravena.");
+				System.out.println("Osoba s ID : " + updateId + " byla ÃºspÄ›Å¡nÄ› upravena.");
 				break;
 				
 				
@@ -221,7 +221,7 @@ public class MainClass {
 				Scanner scAns1 = new Scanner(System.in);
 				if (name != "" && date != "")
 				{
-					System.out.print("Opravdu si pøejete uloit data ( jmeno : " + name + ", datum narození : " + date + ") do tabulky " + checktableName + "?	(Y - ano, N - ne) --> ");
+					System.out.print("Opravdu si pÅ™ejete uloÅ¾it data ( jmeno : " + name + ", datum narozenÃ­ : " + date + ") do tabulky " + checktableName + "?	(Y - ano, N - ne) --> ");
 					String answer1 = scAns1.nextLine();
 					if(answer1.equals("Y")) 
 					{
@@ -232,10 +232,10 @@ public class MainClass {
 						value = 0.0;
 					}
 					else if (!answer1.equals("Y") && !answer1.equals("N"))
-						System.out.println("Nebylo moné rozeznat vaši odpovìï.");
+						System.out.println("Nebylo moÅ¾nÃ© rozeznat vaÅ¡i odpovÄ›Ä.");
 				}
 				else
-					System.out.println("Nebyla zadána ádná data.");
+					System.out.println("Nebyla zadÃ¡na Å¾Ã¡dnÃ¡ data.");
 				break;
 				
 				
